@@ -48,11 +48,11 @@ public class DefaultListenableGraph<V, E>
 {
     private static final long serialVersionUID = 3977575900898471984L;
 
-    private List<GraphListener<V, E>> graphListeners = new ArrayList<>();
-    private List<VertexSetListener<V>> vertexSetListeners = new ArrayList<>();
-    private FlyweightEdgeEvent<V, E> reuseableEdgeEvent;
-    private FlyweightVertexEvent<V> reuseableVertexEvent;
-    private boolean reuseEvents;
+    List<GraphListener<V, E>> graphListeners = new ArrayList<>();
+    List<VertexSetListener<V>> vertexSetListeners = new ArrayList<>();
+    FlyweightEdgeEvent<V, E> reuseableEdgeEvent;
+    FlyweightVertexEvent<V> reuseableVertexEvent;
+    boolean reuseEvents;
 
     /**
      * Creates a new listenable graph.
@@ -342,7 +342,7 @@ public class DefaultListenableGraph<V, E>
         }
     }
 
-    private static <L extends EventListener> void addToListenerList(List<L> list, L l)
+    static <L extends EventListener> void addToListenerList(List<L> list, L l)
     {
         if (!list.contains(l)) {
             list.add(l);

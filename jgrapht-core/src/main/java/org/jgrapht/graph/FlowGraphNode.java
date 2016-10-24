@@ -9,7 +9,7 @@ public class FlowGraphNode
 
     public String getId() { return id; }
 
-    public boolean equals(String node) { return id.equals(node.getId()); }
+    public boolean equals(Object node) { return id.equals(((FlowGraphNode)node).getId()); }
 
     public int hashCode() { return id.hashCode(); }
 
