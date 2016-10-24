@@ -7,6 +7,7 @@
 		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>jgrapht-core</artifactId>
+	<version>1.0.1-SNAPSHOT-josh</version>
 	<name>JGraphT - Core</name>
 	<licenses>
 		<license>

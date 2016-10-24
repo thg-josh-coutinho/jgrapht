@@ -1,7 +1,7 @@
 package org.jgrapht.graph;
 
 import org.jgrapht.graph.ListenableDirectedWeightedGraph;
-import org.jgrapht.event.FlowGraphListener;
+import org.jgrapht.event.IFlowGraphListener;
 
 public class FlowGraph extends ListenableDirectedWeightedGraph<FlowGraphNode, FlowGraphEdge>
 {
@@ -10,7 +10,7 @@ public class FlowGraph extends ListenableDirectedWeightedGraph<FlowGraphNode, Fl
 	super(FlowGraphEdge.class);
     }
 
-    public void addFlowGraphListener(FlowGraphListener listener)
+    public void addFlowGraphListener(IFlowGraphListener listener)
     {
         addToListenerList(graphListeners, listener);
     }
