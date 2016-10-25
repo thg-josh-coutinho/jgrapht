@@ -10,11 +10,6 @@ public class FlowGraph extends ListenableDirectedWeightedGraph<FlowGraphNode, Fl
 	super(FlowGraphEdge.class);
     }
 
-    public void addFlowGraphListener(IFlowGraphListener listener)
-    {
-        addToListenerList(graphListeners, listener);
-    }
-
     @Override
     public void setEdgeWeight(FlowGraphEdge e, double weight)
     {
@@ -22,9 +17,9 @@ public class FlowGraph extends ListenableDirectedWeightedGraph<FlowGraphNode, Fl
 
         if (e != null) {
 	    assert (e instanceof FlowGraphEdge) : e.getClass();
-	    super.setEdgeWeight(e, weight);
             fireEdgeWeightChange(e, weight);
-	    ((FlowGraphEdge) e).weight = weight;
+	    super.setEdgeWeight(e, weight);
+
         }
 
     }

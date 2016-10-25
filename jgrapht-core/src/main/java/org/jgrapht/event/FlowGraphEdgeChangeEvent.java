@@ -1,5 +1,6 @@
 package org.jgrapht.event;
 
+import java.util.*;
 import org.jgrapht.graph.FlowGraphEdge;
 import org.jgrapht.graph.FlowGraphNode;
 
@@ -15,6 +16,16 @@ public class FlowGraphEdgeChangeEvent extends GraphEdgeChangeEvent<FlowGraphNode
         super(eventSource, type, edge, edgeSource, edgeTarget);
 	this.oldWeight = oldWeight;
 	this.newWeight = newWeight;
+    }
+
+    public double getNewWeight()
+    {
+	return newWeight;
+    }
+
+    public String toString()
+    {
+	return String.format("%s - %s, weight: %d - %d\n", edgeSource, edgeTarget, oldWeight, newWeight);
     }
  
 }
