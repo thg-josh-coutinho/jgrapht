@@ -23,9 +23,14 @@ public class FlowGraphEdgeChangeEvent extends GraphEdgeChangeEvent<FlowGraphNode
 	return newWeight;
     }
 
+    public void setNewWeight(double n)
+    {
+	newWeight = n;
+    }
+
     public String toString()
     {
-	return String.format("%s - %s, weight: %d - %d\n", edgeSource, edgeTarget, oldWeight, newWeight);
+	return String.format("%s - %s, weight: %f - %f\n", edgeSource, edgeTarget, oldWeight, newWeight);
     }
  
 }
