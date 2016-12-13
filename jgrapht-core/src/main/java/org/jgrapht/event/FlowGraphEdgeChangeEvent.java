@@ -4,6 +4,7 @@ import java.util.*;
 import org.jgrapht.graph.FlowGraphEdge;
 import org.jgrapht.graph.FlowGraphNode;
 
+
 public class FlowGraphEdgeChangeEvent extends GraphEdgeChangeEvent<FlowGraphNode, FlowGraphEdge> {
 
     public static final int EDGE_WEIGHT_CHANGE = 25;

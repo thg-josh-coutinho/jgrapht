@@ -15,6 +15,8 @@ public class FlowGraph extends ListenableDirectedWeightedGraph<FlowGraphNode, Fl
 
         if (e != null) {
             assert (e instanceof FlowGraphEdge) : e.getClass();
+            e.updateFlow(weight);
+
             fireEdgeWeightChange(e, weight);
             super.setEdgeWeight(e, weight);
 
