@@ -32,7 +32,7 @@ import org.junit.runners.*;
     EqualsAndHashCodeTest.class, GenericGraphsTest.class, ListenableGraphTest.class,
     MaskEdgeSetTest.class, MaskVertexSetTest.class, SerializationTest.class,
     SimpleDirectedGraphTest.class, GraphWalkTest.class, SubgraphTest.class,
-    SimpleIdentityDirectedGraphTest.class, UnionGraphTest.class })
+    SimpleIdentityDirectedGraphTest.class, UnionGraphTest.class, FlowGraphTest.class })
 public final class AllGraphTests
 {
 }

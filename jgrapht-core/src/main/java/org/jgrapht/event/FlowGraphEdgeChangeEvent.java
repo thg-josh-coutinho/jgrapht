@@ -14,8 +14,8 @@ public class FlowGraphEdgeChangeEvent extends GraphEdgeChangeEvent<FlowGraphNode
     public FlowGraphEdgeChangeEvent(Object eventSource, int type, FlowGraphEdge edge, FlowGraphNode edgeSource, FlowGraphNode edgeTarget, double oldWeight, double newWeight)
     {
         super(eventSource, type, edge, edgeSource, edgeTarget);
-	this.oldWeight = oldWeight;
-	this.newWeight = newWeight;
+        this.oldWeight = oldWeight;
+        this.newWeight = newWeight;
     }
 
     public double getNewWeight()

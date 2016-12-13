@@ -3,45 +3,39 @@ package org.jgrapht.graph;
 import org.jgrapht.graph.ListenableDirectedWeightedGraph;
 import org.jgrapht.event.*;
 
-public class FlowGraph extends ListenableDirectedWeightedGraph<FlowGraphNode, FlowGraphEdge>
-{
+public class FlowGraph extends ListenableDirectedWeightedGraph<FlowGraphNode, FlowGraphEdge> {
 
-    public FlowGraph(){
-	super(FlowGraphEdge.class);
+    public FlowGraph() {
+        super(FlowGraphEdge.class);
     }
 
     @Override
-    public void setEdgeWeight(FlowGraphEdge e, double weight)
-    {
+    public void setEdgeWeight(FlowGraphEdge e, double weight) {
 
 
         if (e != null) {
-	    assert (e instanceof FlowGraphEdge) : e.getClass();
+            assert (e instanceof FlowGraphEdge) : e.getClass();
             fireEdgeWeightChange(e, weight);
-	    super.setEdgeWeight(e, weight);
+            super.setEdgeWeight(e, weight);
 
         }
 
     }
 
-    protected void fireEdgeWeightChange(FlowGraphEdge edge, double weight)
-    {
+    protected void fireEdgeWeightChange(FlowGraphEdge edge, double weight) {
         FlowGraphEdgeChangeEvent e =
-            createFlowGraphEdgeChangeEvent(FlowGraphEdgeChangeEvent.EDGE_WEIGHT_CHANGE, edge, (FlowGraphNode)edge.getSource(), (FlowGraphNode)edge.getTarget(), edge.getWeight(), weight);
+                createFlowGraphEdgeChangeEvent(FlowGraphEdgeChangeEvent.EDGE_WEIGHT_CHANGE, edge, (FlowGraphNode) edge.getSource(), (FlowGraphNode) edge.getTarget(), edge.getWeight(), weight);
 
         for (GraphListener<FlowGraphNode, FlowGraphEdge> l : graphListeners) {
-	    if(l instanceof IFlowGraphListener)
-		{
-		    ((IFlowGraphListener)l).edgeWeightChange(e);
-		}
+            if (l instanceof IFlowGraphListener) {
+                ((IFlowGraphListener) l).edgeWeightChange(e);
+            }
         }
     }
 
-    private FlowGraphEdgeChangeEvent createFlowGraphEdgeChangeEvent(int eventType, FlowGraphEdge e, FlowGraphNode source, FlowGraphNode target, double oldWeight, double newWeight)
-    {
-	return new FlowGraphEdgeChangeEvent(this, eventType, e, source, target, oldWeight, newWeight);
+    private FlowGraphEdgeChangeEvent createFlowGraphEdgeChangeEvent(int eventType, FlowGraphEdge e, FlowGraphNode source, FlowGraphNode target, double oldWeight, double newWeight) {
+        return new FlowGraphEdgeChangeEvent(this, eventType, e, source, target, oldWeight, newWeight);
     }
-    
 
 
 }
