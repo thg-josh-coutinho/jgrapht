@@ -9,6 +9,13 @@ public class FlowGraph extends ListenableDirectedWeightedGraph<FlowGraphNode, Fl
         super(FlowGraphEdge.class);
     }
 
+    public FlowGraphEdge getEdgeByName(String name){
+        for(FlowGraphEdge e : edgeSet()){
+            return e;
+        }
+        return null;
+    }
+
     @Override
     public void setEdgeWeight(FlowGraphEdge e, double weight) {
 
